@@ -1,0 +1,10 @@
+.idea
+node_modules
+test
+.editorconfig
+.gitignore
+.jshintrc
+docker-compose.yml
+Dockerfile
+Procfile
+README.md

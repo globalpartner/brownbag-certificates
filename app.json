@@ -1,7 +1,7 @@
 {
-  "name": "Certificates for Code Prestige Courses",
-  "description": "A certificates generator for Code Prestige Courses.",
-  "repository": "https://bitbucket.org/codeprestige/certificate-generator",
+  "name": "Certificates for BrownBag Series",
+  "description": "A certificates generator for BrownBag.",
+  "repository": "https://github.com/globalpartner/brownbag-certificates",
   "keywords": [
     "node",
     "certificate"
