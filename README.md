@@ -1,5 +1,6 @@
 Gerador de Certificados - BrownBag - GlobalPartner.io
 ------------------------------------
+[![Build Status](http://jenkins.codeprestige.com.br/job/GlobalPartner/job/BrownBag-Certificates/badge/icon)](http://jenkins.codeprestige.com.br/job/GlobalPartner/job/BrownBag-Certificates/)
 
 ## Arquitetura
 
