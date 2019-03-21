@@ -1,0 +1,9 @@
+{
+  "name": "Certificates for Code Prestige Courses",
+  "description": "A certificates generator for Code Prestige Courses.",
+  "repository": "https://bitbucket.org/codeprestige/certificate-generator",
+  "keywords": [
+    "node",
+    "certificate"
+  ]
+}

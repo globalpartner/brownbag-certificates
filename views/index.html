@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+</head>
+<body class="brownbag-bg">
+  <!-- Begin page content -->
+  <div class="container">
+    <div class="page-header text-center">
+      <img src="{{{logo}}}" />
+      <br />
+      <p>{{index.instructions}}</p>
+    </div>
+      
+    {{#error}}
+    <p class="alert alert-danger">{{{error}}}</p>
+    {{/error}}
+      
+    <div>
+      <form class="form-horizontal" action="/{{formAction}}" method="POST">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">E-mail</label>
+          <div class="col-sm-9">
+            <input type="email" name="email" class="form-control" id="email" placeholder="{{index.emailPlaceholder}}" aria-label="{{index.inputLabel}}" required="required">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Código do BrownBag</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="courseCode" id="courseCode" placeholder="{{index.courseCode}}" aria-label="{{index.inputLabelCourseCode}}" required="required">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg">{{index.submit}}</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="text-center">
+            <button id="print-certificate" class="btn btn-default btn-sm">{{index.print}}</button>
+          </div>
+        </div>
+      </form> 
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="text-muted">Feito com <span style="color:rgb(240, 81, 81)">&#10084;</span> pela <a href="https://globalpartner.io" target="_blank">GlobalPartner.io</a></p>
+    </div>
+  </footer>
+
+   <!--Print Modal-->
+  <div id="printOrderModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Solicitação de Certificado</h4>
+        </div>
+        <div class="modal-body">
+          <p>Confira os dados abaixo e confirme para a solicitação do certificado.</p>
+          <div id="print_results"></div>
+          <form class="form-horizontal" id="print-form">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">E-mail</label>
+              <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="email-print" readonly>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="pwd">Código do BrownBag</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="courseCode-print" name="courseCode" readonly>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button id="confirm-print-order" class="btn btn-primary">Confirmar solicitação</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    document.getElementById("print-certificate").addEventListener("click", function(event){
+      var email = document.getElementById('email').value;
+      var course = document.getElementById('courseCode').value;
+      console.log(email, course);
+      if(email !== '' && course !== '') {
+        event.preventDefault();
+        document.getElementById('email-print').value = email;
+        document.getElementById('courseCode-print').value = course;
+        $('#printOrderModal').modal('show');
+      }
+    });
+  </script>
+
+  <script src="static/js/jquery.js"></script>
+  <script src="static/js/contact.js"></script>
+  <script src="static/js/bootstrap.js"></script>
+</body>
+</html>

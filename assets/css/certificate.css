@@ -1,0 +1,55 @@
+@page {
+  size: A4 landscape;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #eee;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  height: 100%;
+  margin: 0;
+  padding: 1cm;
+  text-align: center;
+}
+
+.logo-wordcamp {
+  max-height: 100px;
+  width: auto;
+}
+
+.inner-content {
+  display: table-cell;
+  left: 50%;
+  min-width: 80%;
+  position: fixed;
+  top: 63%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.signature img {
+  margin-bottom: -60px;
+  max-height: 58px;
+  width: auto;
+}
+
+.link {
+  font-size: 10px;
+}
+
+h1 {
+  margin: 0.5cm 0;
+}
+
+p {
+  margin: 0.5cm 0;
+  padding: 0 10%;
+}

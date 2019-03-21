@@ -59,3 +59,15 @@ typings/
 
 # next.js build output
 .next
+
+#OS
+.DS_Store
+
+#IDE
+.idea
+*.iml
+.vscode
+
+# CSV
+*.csv
+!csv/sample.csv

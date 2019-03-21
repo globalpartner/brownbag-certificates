@@ -1,0 +1,9 @@
+---
+version: "3.1"
+
+services:
+  mongodb:
+    container_name: globalpartner-db
+    image: mongo:4.0.6
+    ports:
+      - 27017:27017

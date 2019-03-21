@@ -1,0 +1,34 @@
+site:
+  lang: "pt-br"
+  title: "BrownBag - Certificados"
+  logo: "static/images/Camden_Brown_Bag_Series_Web.png"
+  index:
+    message: "Insira o seu e-mail e o código do BrownBag que você realizou"
+    emailPlaceholder: "seu-email@dominio.com.br"
+    courseCode: "CURSO01"
+    inputLabel: "Email"
+    inputLabelCourseCode: "Course Code"
+    submit: "Gerar meu certificado digital"
+    print: "Solicitar certificado"
+    instructions: "Insira o seu e-mail e o código do BrownBag que você realizou para emitir o certificado"
+certificate:
+  textLine1: "Declaramos para os devidos fins que"
+  textLine2: "Participou do curso %event_name%, no dia %event_date%, na qualidade de %attendee_type%, cumprindo uma carga horária total de %event_duration% horas"
+  background: "static/images/background.png"
+  logo: "static/images/Git-logo.png"
+routes:
+  certificate: certificate
+  verification: verify
+  print: print
+errors:
+  error: "<strong>Ocorreu um erro:</strong> %message%"
+  notApproved: "Você não foi aprovado neste curso!"
+  missingEmail: "Missing email address!"
+  invalidEmail: "Invalid email address!"
+  emailNoExists: "Não foi encontrado nenhum registro com este e-mail."
+  notAttended: "Você não participou deste curso!"
+  templateError: "An error occurred while reading the template file!"
+  csrfError: "Cheatin' huh?"
+  error404: "404: Page not Found"
+  error500: "500: Internal Server Error"
+csv: csv/sample.csv

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{event.name}}</title>
+  <link rel="stylesheet" type="text/css" href="{{{baseUrl}}}/static/css/certificate.css" />
+  <style>
+    body {
+      background-image: url("{{{baseUrl}}}{{certificate.background}}");
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <img class="logo-wordcamp" src="{{{baseUrl}}}{{{certificate.logo}}}" alt="{{event.name}}" />
+
+    <div class="inner-content">
+      <p>{{{certificate.textLine1}}}</p>
+      <h1>{{attendee.firstName}} {{attendee.lastName}}</h1>
+      <p>{{{attendee.data}}}</p>
+
+      <br />
+      <div class="signature">
+        {{#certificate.instructorSignature}}<img src="{{{baseUrl}}}{{{certificate.instructorSignature}}}" alt="signature" />{{/certificate.instructorSignature}}
+        <br/>
+        <br/>
+        <br/>
+        <p>___________________________________</p>
+        <p>Instrutor: {{certificate.instructor}}</p>
+      </div>
+
+      <br />
+      <p class="link">Verifique a autenticidade deste certificado em: {{{baseUrl}}}{{certificate.link}}</p>
+      
+    </div>
+  </div>
+</body>
+</html>
