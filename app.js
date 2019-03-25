@@ -35,8 +35,8 @@ app.get('*', function (req, res, next) {
   next();
 });
 
-app.use("/", routes);
-app.use("/dev", devRoutes);
+app.use('/', routes);
+app.use('/dev', devRoutes);
 
 // Handle CSRF token errors
 app.use(function (err, req, res, next) {
@@ -53,22 +53,21 @@ app.use(function (err, req, res, next) {
 });
 
 // Handle 500
-app.use(function (err, req, res) {
+app.use(function(err, req, res, next){
   var args     = config.site;
   args.event   = config.event;
   args.message = config.errors.error500;
 
   res.sendStatus(500);
-  res.render('error', args);
+  res.render('error', { error: err });
 });
 
 // Handle 404
-app.use(function (req, res) {
+app.use(function(req, res) {
   var args     = config.site;
   args.event   = config.event;
   args.message = config.errors.error404;
 
-  res.sendStatus(400);
   res.render('error', args);
 });
 

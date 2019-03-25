@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 // Connect to db before tests run
 before(function(done){
   // console.log('connecting to the database');
-  const DATABASE_URL = 'mongodb://admin:admin@ds135747.mlab.com:35747/codeprestige-tests';
+  const DATABASE_URL = 'mongodb://localhost:27017/certificates-tests';
   mongoose.connect(DATABASE_URL, { useMongoClient: true });
   mongoose.connection.once('open', function(){
     console.log('Connection has been made, now make fireworks...');
